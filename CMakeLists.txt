@@ -1,13 +1,31 @@
-set(COMPONENT_SRCDIRS
-"./"
-)
-
-set(COMPONENT_ADD_INCLUDEDIRS
-"./"
-)
-
-set(COMPONENT_REQUIRES
-"arduino"
+idf_component_register(
+    SRCS 
+        "src/Buttons/AnalogStick.cpp"
+        "src/Buttons/Button.cpp"
+        "src/Buttons/ButtonAnalog.cpp"
+        "src/Buttons/ButtonGPIOExpander.cpp"
+        "src/Buttons/ButtonPullup.cpp"
+        "src/Buttons/ButtonPullupGPIOExpander.cpp"
+        "src/Buttons/PS2Gamepad.cpp"
+        "src/Buttons/RotaryEncoder.cpp"
+        "src/Buttons/RotaryEncoderI2C.cpp"
+        "src/Buttons/Switch.cpp"
+        "src/Events/ClickEvent.cpp"
+        "src/Events/DoubleclickEvent.cpp"
+        "src/Events/Event.cpp"
+        "src/Events/HoldEvent.cpp"
+        "src/Events/PushEvent.cpp"
+        "src/Events/ReleaseEvent.cpp"
+        "src/libs/GPIOExpander.cpp"
+        "src/libs/MCP23017.cpp"
+        "src/libs/PCF8574.cpp"
+        "src/libs/PCF8575.cpp"
+    INCLUDE_DIRS 
+        "src"
+        "src/Buttons"
+        "src/Events"
+        "src/libs"
+    REQUIRES arduino
 )
 
 register_component()
